@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Election Results</h1>
+
+<div id="candidates" role="list of candidates">
+  <% @candidates.each do |candidate| %>
+    <%= render "votes/candidate", candidate: candidate %>
+  <% end %>
+</div>

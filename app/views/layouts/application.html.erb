@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VOTE.WEBSITE</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+
+  <body>
+    <header>
+      <h3>VOTE.WEBSITE</h3>
+      <% if current_user %>
+        <p>Signed in as <%= current_user.email %></p>
+      <% elsif request.path == new_session_path %>
+        <p><%= link_to "Results", votes_path %></p>
+      <% else %>
+        <p><%= link_to "Register", new_session_path %></p>
+      <% end %>
+    </header>
+    <%= yield %>
+  </body>
+</html>

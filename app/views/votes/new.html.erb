@@ -1,0 +1,22 @@
+<div class="timer">
+  <span class="minute"></span><span class="second"></span>
+</div>
+<h1>Cast your vote today!</h1>
+<%= form_tag(votes_path, id: "existing_candidate") do %>
+  <% Candidate.all.each do |candidate| %>
+    <div>
+      <%= radio_button_tag :vote_for, candidate.id %>
+      <%= label_tag(:vote_for, candidate.name) %>
+    </div>
+    <br>
+  <% end %>
+  <%= submit_tag "Vote", id: "vote_for_existing_candidate" %>
+<% end %>
+<br>
+<% if Candidate.count < 10 %>
+   <hr>
+   <br>
+   <h3> Or, add a new candidate:</h3>
+   <%= render "form", candidate: @candidate %>
+   <br>
+<% end %>
