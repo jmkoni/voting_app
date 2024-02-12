@@ -1,0 +1,18 @@
+<%= form_with(model: candidate, url: votes_path, id: "new_candidate") do |form| %>
+  <% if candidate.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(candidate.errors.count, "error") %> prohibited this candidate from being saved:</h2>
+
+      <ul>
+        <% candidate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.text_field :name, placeholder: "Enter name..." %>&nbsp;
+    <%= form.submit "Vote", id: "vote_for_new_candidate" %>
+  </div>
+<% end %>

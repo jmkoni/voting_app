@@ -1,0 +1,27 @@
+<%= form_with(model: voter, url: sessions_path) do |form| %>
+  <% if voter.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(voter.errors.count, "error") %> prohibited sign in:</h2>
+
+      <ul>
+        <% voter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :zip_code, style: "display: block" %>
+    <%= form.text_field :zip_code %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit "Register" %>
+  </div>
+<% end %>

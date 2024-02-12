@@ -1,0 +1,47 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Pretty much all of this CSS is an effort to get items to be in the same row */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+header p {
+    text-align: right;
+}
+
+div.vote_tally {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    width: 50%;
+}
+
+p.candidate_vote_count {
+    text-align: right;
+}
+
+div.timer {
+    padding: 20px;
+    text-align: right;
+}
